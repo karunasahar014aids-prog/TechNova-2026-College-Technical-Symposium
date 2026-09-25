@@ -32,3 +32,16 @@ form.addEventListener('submit',(e)=>{
   form.reset();
   success.scrollIntoView({behavior:'smooth',block:'center'});
 });
+
+
+// Lightweight 3D tilt interaction for pointer devices
+document.querySelectorAll('.tilt-card, .card').forEach(card=>{
+  card.addEventListener('mousemove',(e)=>{
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    const r=card.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width-.5;
+    const y=(e.clientY-r.top)/r.height-.5;
+    card.style.transform=`perspective(700px) rotateX(${-y*7}deg) rotateY(${x*7}deg) translateY(-6px)`;
+  });
+  card.addEventListener('mouseleave',()=>card.style.transform='');
+});
