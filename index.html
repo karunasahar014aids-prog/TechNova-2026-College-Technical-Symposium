@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TechNova 2026 College Technical Symposium event registration website">
+  <title>TechNova 2026 | Technical Symposium</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <nav class="nav container">
+    <a class="logo" href="#home">Tech<span>Nova</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a><a href="#about">Event</a><a href="#schedule">Schedule</a><a href="#register">Register</a><a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="container hero-content">
+    <div>
+      <p class="eyebrow">COLLEGE TECHNICAL SYMPOSIUM • 2026</p>
+      <h1>Build. Innovate.<br><span>Inspire.</span></h1>
+      <p class="hero-text">Join TechNova 2026 for a day of coding, technology talks, project showcases and exciting competitions.</p>
+      <div class="hero-actions"><a class="btn primary" href="#register">Register Now</a><a class="btn secondary" href="#about">Explore Event</a></div>
+      <div class="stats"><div><strong>12+</strong><small>Events</small></div><div><strong>300+</strong><small>Participants</small></div><div><strong>15</strong><small>Mentors</small></div></div>
+    </div>
+    <div class="hero-card"><div class="date-badge">18<br><small>OCT</small></div><p>Saturday, 2026</p><h3>TechNova 2026</h3><p>Sir Isaac Newton College of Engineering and Technology</p><span>📍 Nagapattinam, Tamil Nadu</span></div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container">
+    <div class="section-heading"><p class="eyebrow">ABOUT THE EVENT</p><h2>One platform. Many possibilities.</h2><p>TechNova is a student-focused technical symposium designed to bring together learners, innovators and technology enthusiasts.</p></div>
+    <div class="cards">
+      <article class="card"><div class="icon">💻</div><h3>Coding Competition</h3><p>Test your problem-solving and programming skills.</p></article>
+      <article class="card"><div class="icon">🤖</div><h3>AI & ML Talk</h3><p>Explore practical applications of artificial intelligence.</p></article>
+      <article class="card"><div class="icon">🚀</div><h3>Project Expo</h3><p>Showcase innovative student projects and ideas.</p></article>
+    </div>
+    <div class="info-grid">
+      <div><strong>📅 Date</strong><span>18 October 2026</span></div>
+      <div><strong>⏰ Time</strong><span>9:00 AM – 4:30 PM</span></div>
+      <div><strong>📍 Venue</strong><span>College Auditorium</span></div>
+      <div><strong>🎟️ Entry</strong><span>Free Registration</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="schedule" class="section alt">
+  <div class="container">
+    <div class="section-heading"><p class="eyebrow">EVENT SCHEDULE</p><h2>Your day at TechNova</h2></div>
+    <div class="timeline">
+      <div><time>09:00 AM</time><article><h3>Registration & Welcome</h3><p>Participant check-in and welcome address.</p></article></div>
+      <div><time>10:00 AM</time><article><h3>Technical Keynote</h3><p>AI, emerging technology and future careers.</p></article></div>
+      <div><time>11:30 AM</time><article><h3>Coding Challenge</h3><p>Competitive programming round.</p></article></div>
+      <div><time>01:30 PM</time><article><h3>Project Expo</h3><p>Student project demonstrations.</p></article></div>
+      <div><time>03:30 PM</time><article><h3>Valedictory & Prizes</h3><p>Results, certificates and prize distribution.</p></article></div>
+    </div>
+  </div>
+</section>
+
+<section id="register" class="section">
+  <div class="container form-wrap">
+    <div class="section-heading"><p class="eyebrow">ONLINE REGISTRATION</p><h2>Reserve your spot</h2><p>Fill in the details below. All fields marked * are required.</p></div>
+    <form id="registrationForm" novalidate>
+      <div class="form-grid">
+        <label>Participant Name *<input id="name" name="name" type="text" placeholder="Enter your full name"><small class="error" id="nameError"></small></label>
+        <label>Register Number *<input id="regNo" name="regNo" type="text" placeholder="e.g. 26CSE001"><small class="error" id="regNoError"></small></label>
+        <label>Department / Organization *<input id="department" name="department" type="text" placeholder="e.g. CSE"><small class="error" id="departmentError"></small></label>
+        <label>Year of Study *<select id="year" name="year"><option value="">Select year</option><option>I Year</option><option>II Year</option><option>III Year</option><option>IV Year</option></select><small class="error" id="yearError"></small></label>
+        <label>Email Address *<input id="email" name="email" type="email" placeholder="you@example.com"><small class="error" id="emailError"></small></label>
+        <label>Mobile Number *<input id="mobile" name="mobile" type="tel" inputmode="numeric" maxlength="10" placeholder="10-digit mobile number"><small class="error" id="mobileError"></small></label>
+        <label class="full">Event Selection *<select id="event" name="event"><option value="">Choose an event</option><option>Coding Competition</option><option>AI & Machine Learning Talk</option><option>Project Expo</option><option>Quiz Competition</option></select><small class="error" id="eventError"></small></label>
+      </div>
+      <button class="btn primary submit" type="submit">Submit Registration</button>
+      <div id="successMessage" class="success" role="alert"></div>
+    </form>
+  </div>
+</section>
+
+<section id="contact" class="section contact">
+  <div class="container contact-grid">
+    <div><p class="eyebrow">CONTACT</p><h2>Have a question?</h2><p>Reach out to the student event coordination team for registration or event enquiries.</p></div>
+    <div class="contact-card"><p>📧 <strong>Email:</strong> technova@example.com</p><p>📞 <strong>Phone:</strong> +91 98765 43210</p><p>📍 <strong>Venue:</strong> Sir Isaac Newton College of Engineering and Technology</p></div>
+  </div>
+</section>
+</main>
+<footer><p>© 2026 TechNova. Designed for educational event registration.</p></footer>
+<script src="script.js"></script>
+</body>
+</html>
