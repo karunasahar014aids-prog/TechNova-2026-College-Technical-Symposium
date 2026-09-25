@@ -7,3 +7,23 @@
 .form-wrap{max-width:900px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}label{font-weight:600;font-size:.9rem}label.full{grid-column:1/-1}input,select{display:block;width:100%;margin-top:7px;padding:14px 15px;border-radius:4px;border:1px solid #ffffff18;background:#0e0e0e;color:var(--text);font:inherit;outline:none}input:focus,select:focus{border-color:var(--gold)}select option{background:#0e0e0e}.error{display:block;color:#e78c8c;min-height:20px;font-size:.78rem;margin-top:4px}.submit{margin-top:8px}.success{margin-top:20px;padding:14px;border-radius:4px;background:rgba(212,175,55,.1);border:1px solid var(--gold);color:var(--gold2);display:none}.success.show{display:block}
 .contact{background:linear-gradient(135deg,#0a0a0a,#15120a)}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.contact-card{padding:25px;border:1px solid var(--border);background:#0d0d0d;border-radius:4px;color:var(--muted)}.contact-card strong{color:var(--gold2)}footer{text-align:center;padding:25px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--border)}
 @media(max-width:760px){.nav-links{display:none;position:absolute;top:74px;left:0;right:0;background:#050505;padding:20px;flex-direction:column;gap:15px;border-bottom:1px solid var(--border)}.nav-links.open{display:flex}.menu-toggle{display:block}.hero{padding-top:70px}.hero-content,.contact-grid{grid-template-columns:1fr;gap:35px}.cards,.info-grid{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}label.full{grid-column:auto}.timeline>div{grid-template-columns:1fr;gap:3px}.timeline time{padding-top:10px}.stats{gap:25px}.section{padding:65px 0}}@media(max-width:450px){.cards,.info-grid{grid-template-columns:1fr}.hero-actions{flex-direction:column}.stats{justify-content:space-between}}
+/* 3D premium motion */
+.hero-content{perspective:1200px}
+.hero-orbit{position:absolute;right:12%;top:135px;width:330px;height:330px;pointer-events:none;transform-style:preserve-3d;animation:float3d 6s ease-in-out infinite}
+.orbit-ring{position:absolute;inset:35px;border:1px solid rgba(212,175,55,.42);border-radius:50%;transform-style:preserve-3d}
+.ring-one{transform:rotateX(68deg) rotateZ(18deg);animation:spin3d 10s linear infinite}
+.ring-two{inset:55px;transform:rotateY(65deg) rotateZ(-18deg);animation:spin3dReverse 8s linear infinite}
+.orbit-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) translateZ(45px);width:110px;height:110px;border-radius:28px;display:grid;place-items:center;background:linear-gradient(145deg,#f0cf66,#8c6b13);color:#080808;font-size:1.5rem;font-weight:800;box-shadow:0 0 55px rgba(212,175,55,.28),inset 0 2px 10px rgba(255,255,255,.35);animation:corePulse 3s ease-in-out infinite}
+.orbit-core span{font-size:.75rem;margin-left:3px}
+.orbit-dot{position:absolute;width:13px;height:13px;border-radius:50%;background:var(--gold2);box-shadow:0 0 18px var(--gold)}
+.dot-one{left:23px;top:145px;animation:dotFloat 4s ease-in-out infinite}
+.dot-two{right:18px;top:70px;animation:dotFloat 5s ease-in-out infinite reverse}
+.tilt-card,.card,.info-grid div,.timeline article{transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;transform-style:preserve-3d}
+.tilt-card:hover,.card:hover,.info-grid div:hover,.timeline article:hover{transform:translateY(-8px) rotateX(2deg) rotateY(-3deg);box-shadow:0 20px 45px rgba(212,175,55,.12);border-color:rgba(212,175,55,.55)}
+@keyframes float3d{0%,100%{transform:translateY(0) rotateX(4deg)}50%{transform:translateY(-16px) rotateX(-4deg)}}
+@keyframes spin3d{to{transform:rotateX(68deg) rotateZ(378deg)}}
+@keyframes spin3dReverse{to{transform:rotateY(65deg) rotateZ(-378deg)}}
+@keyframes corePulse{0%,100%{transform:translate(-50%,-50%) translateZ(45px) scale(1)}50%{transform:translate(-50%,-50%) translateZ(65px) scale(1.06)}}
+@keyframes dotFloat{0%,100%{transform:translate3d(0,0,20px)}50%{transform:translate3d(8px,-14px,55px)}}
+@media(max-width:760px){.hero-orbit{position:relative;right:auto;top:auto;width:220px;height:220px;margin:0 auto -15px}.hero-content{gap:25px}.orbit-core{width:82px;height:82px;font-size:1.1rem}.orbit-ring{inset:20px}.ring-two{inset:38px}}
+@media(prefers-reduced-motion:reduce){.hero-orbit,.orbit-ring,.orbit-core,.orbit-dot{animation:none!important}.tilt-card,.card,.info-grid div,.timeline article{transition:none}}
